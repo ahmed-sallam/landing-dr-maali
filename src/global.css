@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0F5E54;
+  --primary-light: #1A8F82;
+  --secondary: #B14E00;
+  --secondary-light: #D67D3D;
+  --accent: #DEB749;
+  --accent-light: #E9CD7C;
+  --neutral: #D9D2C5;
+  --background: #FFFFFF;
+  --text: #333333;
+}
+
+@layer base {
+  html {
+    font-family: 'Almarai', sans-serif;
+    scroll-behavior: smooth;
+    font-size: 18px;
+  }
+  
+  body {
+    @apply bg-background text-text;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-bold;
+  }
+
+  p {
+    @apply text-lg md:text-xl;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-4 rounded-lg font-semibold text-xl hover:bg-primary-light transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white px-6 py-4 rounded-lg font-semibold text-xl hover:bg-secondary-light transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white px-6 py-4 rounded-lg font-semibold text-xl hover:bg-accent-light transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .page-title {
+    @apply text-5xl md:text-6xl font-bold text-primary mb-8;
+  }
+
+  .nav-link {
+    @apply text-xl hover:text-primary transition-colors;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-primary mb-8 text-center;
+  }
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.float-contact {
+  @apply fixed bottom-6 right-6 flex flex-col gap-4 z-50;
+}
+
+/* Gradient overlays */
+.gradient-overlay {
+  @apply absolute inset-0 bg-gradient-to-r from-primary/60 to-secondary/60;
+}
+
+/* Animated elements */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-1;
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:scale-105;
+}
